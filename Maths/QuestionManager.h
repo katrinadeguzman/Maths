@@ -1,13 +1,14 @@
 //
-//  AdditionQuestion.h
+//  QuestionManager.h
 //  Maths
 //
 //  Created by Katrina de Guzman on 2017-05-31.
 //  Copyright © 2017 Katrina de Guzman. All rights reserved.
 //
 
-#import "Question.h"
+#import <Foundation/Foundation.h>
 
-@interface AdditionQuestion : Question
+@interface QuestionManager : NSObject
+@property NSMutableArray* questions;
 
 @end
