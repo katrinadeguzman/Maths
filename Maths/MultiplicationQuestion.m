@@ -14,8 +14,8 @@
 {
     self = [super init];
     
-    self.rightValue = arc4random_uniform(91)+10;
-    self.leftValue = arc4random_uniform(91)+10;
+    self.rightValue = arc4random_uniform(7)+2;
+    self.leftValue = arc4random_uniform(7)+2;
     
     self.answer = self.rightValue * self.leftValue;
     self.question = [NSString stringWithFormat:@"%.0f * %.0f =", self.rightValue, self.leftValue];

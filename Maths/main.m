@@ -12,7 +12,7 @@
 #import "QuestionManager.h"
 #import "AdditionQuestion.h"
 #import "SubtractionQuestion.h"
-#import "DivisionQuestion.h"
+//#import "DivisionQuestion.h"
 #import "MultiplicationQuestion.h"
 
 int main(int argc, const char * argv[])
@@ -22,13 +22,16 @@ int main(int argc, const char * argv[])
         NSLog(@"Maths!");
         BOOL quit = NO;
         ScoreKeeper* scoreKeeper = [[ScoreKeeper alloc]init];
+        QuestionManager* qManager = [[QuestionManager alloc]init];
         
         while(!quit)
         {
-            //Question* question = [[MultiplicationQuestion alloc]init];
+            Question* question = [[MultiplicationQuestion alloc]init];
             //Question* question = [[AdditionQuestion alloc]init];
-            Question* question = [[SubtractionQuestion alloc]init];
-            //Question* question = [[DivisionQuestion alloc]init];
+            //Question* question = [[SubtractionQuestion alloc]init];
+            //Question* question = [[DivisionQuestion alloc]init]; //division unfinished
+            
+            [qManager addQuestion:question];
             
             [question generateQuestion];
             char input[255];
@@ -50,15 +53,23 @@ int main(int argc, const char * argv[])
                 [question answerTime];
                 [scoreKeeper correct:YES];
                 
+                [qManager timeOutput];
+                
             }
             else
             {
                 NSLog(@"WRONG!");
                 [question answerTime];
                 [scoreKeeper correct:NO];
+                
+                [qManager timeOutput];
+                
             }
             
+            
+            
         }
+        
         
         
     }

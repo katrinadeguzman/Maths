@@ -21,7 +21,6 @@
     _question = [NSString stringWithFormat:@"%.0f + %.0f =", _rightValue, _leftValue];
     
     _startTime = [NSDate date];
-    //NSLog(@"Start%@ - %@", _startTime, self.startTime);
     
     return self;
 }
@@ -40,8 +39,6 @@
 
 -(NSTimeInterval)answerTime
 {
-    
-    NSLog(@"%.0f seconds",[_endTime timeIntervalSinceDate:_startTime]);
     return [_endTime timeIntervalSinceDate:_startTime];
 }
 @end
